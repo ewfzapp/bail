@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Générateur de Bail de Location Gratuit 2026 - Service Express</title>
+  <meta name="description" content="Créez votre contrat de bail de location en ligne gratuitement. Bail meublé ou non meublé, conforme à la loi Alur. Téléchargement PDF immédiat.">
+  <meta property="og:title" content="Générateur de Bail de Location - Service Express">
+  <meta property="og:description" content="Rédigez votre bail locatif en quelques minutes. Gratuit, conforme loi Alur 2026.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://bail.service-express.org/">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <style>
+    :root {
+      --bg: #0f1117; --surface: #1a1d27; --surface2: #222536; --border: #2e3247;
+      --accent: #4f8ef7; --accent2: #7c5cfc; --text: #e8eaf6; --text-muted: #8b90a8;
+      --success: #34d399; --radius: 12px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; }
+    header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-size: 1.1rem; font-weight: 700; color: var(--accent); text-decoration: none; }
+    .logo span { color: var(--text-muted); font-weight: 400; font-size: 0.9rem; }
+    nav a { color: var(--text-muted); font-size: 0.85rem; text-decoration: none; }
+    nav a:hover { color: var(--text); }
+    .hero { text-align: center; padding: 40px 20px 28px; }
+    .hero h1 { font-size: clamp(1.5rem, 4vw, 2.2rem); font-weight: 800; margin-bottom: 10px; }
+    .hero h1 span { background: linear-gradient(90deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero p { color: var(--text-muted); font-size: 1rem; max-width: 560px; margin: 0 auto; }
+    .badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(79,142,247,0.12); border: 1px solid rgba(79,142,247,0.25); color: var(--accent); padding: 4px 12px; border-radius: 20px; font-size: 0.78rem; font-weight: 600; margin-bottom: 16px; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 16px 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media(max-width: 720px) { .container { grid-template-columns: 1fr; } }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+    .card h2 { font-size: 1rem; font-weight: 700; margin-bottom: 18px; display: flex; align-items: center; gap: 8px; }
+    label { display: block; font-size: 0.82rem; color: var(--text-muted); margin-bottom: 5px; margin-top: 14px; font-weight: 500; }
+    label:first-of-type { margin-top: 0; }
+    input, select, textarea { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-size: 0.9rem; padding: 9px 12px; outline: none; transition: border 0.2s; font-family: inherit; }
+    input:focus, select:focus, textarea:focus { border-color: var(--accent); }
+    textarea { resize: vertical; min-height: 70px; }
+    select option { background: var(--surface2); }
+    .preview-card { grid-column: 1 / -1; }
+    .preview-box { background: #fff; color: #111; border-radius: 8px; padding: 32px 36px; font-family: 'Times New Roman', serif; font-size: 0.88rem; line-height: 1.75; min-height: 400px; white-space: pre-wrap; word-break: break-word; }
+    .btn-row { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+    .btn { padding: 10px 22px; border-radius: 8px; border: none; cursor: pointer; font-size: 0.9rem; font-weight: 600; transition: all 0.18s; display: flex; align-items: center; gap: 7px; }
+    .btn-primary { background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #fff; }
+    .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn-secondary { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+    .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-success { background: rgba(52,211,153,0.15); color: var(--success); border: 1px solid rgba(52,211,153,0.3); }
+    .tip { background: rgba(79,142,247,0.08); border-left: 3px solid var(--accent); padding: 10px 14px; border-radius: 0 8px 8px 0; font-size: 0.82rem; color: var(--text-muted); margin-top: 12px; }
+    .tip strong { color: var(--accent); }
+    .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .seo { max-width: 820px; margin: 0 auto; padding: 0 16px 60px; }
+    .seo h2 { font-size: 1.3rem; font-weight: 700; margin: 32px 0 12px; }
+    .seo h3 { font-size: 1rem; font-weight: 600; margin: 22px 0 8px; color: var(--accent); }
+    .seo p, .seo li { color: var(--text-muted); font-size: 0.93rem; line-height: 1.8; margin-bottom: 8px; }
+    .seo ul { padding-left: 18px; }
+    .seo table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.88rem; }
+    .seo th { background: var(--surface2); color: var(--text); padding: 10px; text-align: left; border: 1px solid var(--border); }
+    .seo td { padding: 9px 10px; border: 1px solid var(--border); color: var(--text-muted); }
+    .faq-item { border: 1px solid var(--border); border-radius: 8px; margin-bottom: 10px; overflow: hidden; }
+    .faq-q { padding: 14px 16px; cursor: pointer; font-weight: 600; font-size: 0.92rem; display: flex; justify-content: space-between; background: var(--surface); }
+    .faq-q:hover { background: var(--surface2); }
+    .faq-a { padding: 0 16px; max-height: 0; overflow: hidden; transition: max-height 0.3s, padding 0.3s; color: var(--text-muted); font-size: 0.88rem; line-height: 1.7; }
+    .faq-a.open { max-height: 300px; padding: 14px 16px; }
+    footer { text-align: center; padding: 20px; color: var(--text-muted); font-size: 0.82rem; border-top: 1px solid var(--border); }
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+  </style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="https://service-express.org">Service Express <span>/ Bail de Location</span></a>
+  <nav><a href="https://service-express.org">← Tous les outils</a></nav>
+</header>
+
+<div class="hero">
+  <div class="badge">🏠 Outil juridique gratuit</div>
+  <h1>Générateur de <span>Bail de Location</span></h1>
+  <p>Créez votre contrat de bail en quelques minutes. Conforme à la loi Alur et à la réglementation 2026.</p>
+</div>
+
+<div class="container">
+
+  <!-- Bailleur -->
+  <div class="card">
+    <h2>🏠 Le bailleur (propriétaire)</h2>
+    <label>Prénom et Nom / Dénomination sociale</label>
+    <input type="text" id="bail_nom" placeholder="Pierre Martin" oninput="genBail()">
+    <label>Adresse complète</label>
+    <input type="text" id="bail_adresse" placeholder="12 rue des Roses, 75008 Paris" oninput="genBail()">
+    <label>Type de bailleur</label>
+    <select id="bail_type" onchange="genBail()">
+      <option value="particulier">Particulier</option>
+      <option value="sci">SCI</option>
+      <option value="bailleur_social">Bailleur social</option>
+    </select>
+    <label>Représenté par (si SCI)</label>
+    <input type="text" id="bail_representant" placeholder="En qualité de gérant" oninput="genBail()">
+  </div>
+
+  <!-- Locataire -->
+  <div class="card">
+    <h2>👤 Le(s) locataire(s)</h2>
+    <label>Prénom et Nom du locataire principal</label>
+    <input type="text" id="loc_nom" placeholder="Sophie Durand" oninput="genBail()">
+    <label>Date de naissance</label>
+    <input type="date" id="loc_naissance" oninput="genBail()">
+    <label>Adresse actuelle</label>
+    <input type="text" id="loc_adresse" placeholder="5 avenue des Fleurs, 69000 Lyon" oninput="genBail()">
+    <label>Co-locataire (optionnel)</label>
+    <input type="text" id="coloc_nom" placeholder="Marc Durand" oninput="genBail()">
+  </div>
+
+  <!-- Logement -->
+  <div class="card">
+    <h2>🔑 Le logement</h2>
+    <label>Adresse du logement loué</label>
+    <input type="text" id="log_adresse" placeholder="8 impasse du Vieux Moulin" oninput="genBail()">
+    <label>Code postal et Ville</label>
+    <input type="text" id="log_ville" placeholder="38000 Grenoble" oninput="genBail()">
+    <label>Type de logement</label>
+    <select id="log_type" onchange="genBail()">
+      <option value="appartement">Appartement</option>
+      <option value="maison">Maison individuelle</option>
+      <option value="studio">Studio</option>
+      <option value="chambre">Chambre</option>
+    </select>
+    <label>Nature du bail</label>
+    <select id="bail_nature" onchange="genBail()">
+      <option value="non_meuble">Non meublé (3 ans)</option>
+      <option value="meuble">Meublé (1 an)</option>
+      <option value="mobilite">Bail mobilité (1 à 10 mois)</option>
+    </select>
+    <label>Surface habitable (m²)</label>
+    <input type="number" id="log_surface" placeholder="48" oninput="genBail()">
+    <label>Étage</label>
+    <input type="text" id="log_etage" placeholder="2ème étage" oninput="genBail()">
+    <label>Description (pièces)</label>
+    <textarea id="log_desc" placeholder="Entrée, séjour, 2 chambres, cuisine, salle de bain, WC" oninput="genBail()"></textarea>
+  </div>
+
+  <!-- Conditions financières -->
+  <div class="card">
+    <h2>💶 Conditions financières</h2>
+    <label>Loyer mensuel hors charges (€)</label>
+    <input type="number" id="loyer_hc" placeholder="750" oninput="genBail()">
+    <label>Charges mensuelles (€)</label>
+    <input type="number" id="charges" placeholder="80" oninput="genBail()">
+    <label>Type de charges</label>
+    <select id="charges_type" onchange="genBail()">
+      <option value="forfait">Forfait</option>
+      <option value="provision">Provisions sur charges avec régularisation</option>
+    </select>
+    <label>Dépôt de garantie (€)</label>
+    <input type="number" id="depot" placeholder="750" oninput="genBail()">
+    <label>Date d'entrée dans les lieux</label>
+    <input type="date" id="date_entree" oninput="genBail()">
+    <label>Jour de paiement du loyer</label>
+    <select id="jour_paiement" onchange="genBail()">
+      <option value="1er">Le 1er du mois</option>
+      <option value="5">Le 5 du mois</option>
+      <option value="10">Le 10 du mois</option>
+      <option value="15">Le 15 du mois</option>
+    </select>
+    <label>Mode de paiement</label>
+    <select id="mode_paiement" onchange="genBail()">
+      <option value="virement">Virement bancaire</option>
+      <option value="cheque">Chèque</option>
+      <option value="prelevement">Prélèvement automatique</option>
+      <option value="especes">Espèces (contre reçu)</option>
+    </select>
+    <label>Zone tendue ?</label>
+    <select id="zone_tendue" onchange="genBail()">
+      <option value="non">Non</option>
+      <option value="oui">Oui (encadrement des loyers)</option>
+    </select>
+  </div>
+
+  <!-- Prévisualisation -->
+  <div class="card preview-card">
+    <h2>📄 Aperçu du bail</h2>
+    <div class="preview-box" id="preview">Remplissez les champs pour générer votre bail…</div>
+    <div class="tip">
+      <strong>Important :</strong> Ce générateur produit un modèle de base conforme à la loi Alur. Pour les logements en zone tendue (Paris, Lyon, Bordeaux…), vérifiez l'encadrement des loyers en vigueur. Il est recommandé d'annexer l'état des lieux d'entrée, le DPE, et les diagnostics obligatoires.
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-primary" onclick="downloadPDF()">📥 Télécharger en PDF</button>
+      <button class="btn btn-success" onclick="copyBail()">📋 Copier le texte</button>
+      <button class="btn btn-secondary" onclick="resetForm()">🔄 Réinitialiser</button>
+    </div>
+  </div>
+</div>
+
+<!-- SEO -->
+<div class="seo">
+  <h2>Bail de location : ce que dit la loi Alur en 2026</h2>
+  <p>La loi Alur (Accès au Logement et Urbanisme Rénové) de 2014, complétée par plusieurs décrets, impose un cadre strict pour les baux d'habitation en France. Tout contrat de location doit respecter un <strong>modèle type réglementaire</strong> défini par décret.</p>
+
+  <h2>Tableau comparatif des types de bail</h2>
+  <table>
+    <tr><th>Type</th><th>Durée</th><th>Préavis locataire</th><th>Préavis bailleur</th><th>Dépôt de garantie max</th></tr>
+    <tr><td>Non meublé</td><td>3 ans (6 ans si SCI)</td><td>3 mois (1 mois zone tendue)</td><td>6 mois</td><td>1 mois de loyer HC</td></tr>
+    <tr><td>Meublé</td><td>1 an (9 mois pour étudiant)</td><td>1 mois</td><td>3 mois</td><td>2 mois de loyer HC</td></tr>
+    <tr><td>Bail mobilité</td><td>1 à 10 mois</td><td>1 mois</td><td>Non renouvelable</td><td>Interdit</td></tr>
+  </table>
+
+  <h2>Documents obligatoires à annexer au bail</h2>
+  <ul>
+    <li><strong>Diagnostic de Performance Énergétique (DPE)</strong> — obligatoire depuis 2011</li>
+    <li><strong>État des Risques et Pollutions (ERP)</strong> — zones à risque</li>
+    <li><strong>Diagnostic amiante</strong> — immeubles construits avant 1997</li>
+    <li><strong>Diagnostic plomb (CREP)</strong> — immeubles construits avant 1949</li>
+    <li><strong>État des lieux d'entrée</strong> contradictoire ou par huissier</li>
+    <li><strong>Notice d'information</strong> sur les droits et obligations des parties</li>
+    <li><strong>Règlement de copropriété</strong> si applicable</li>
+  </ul>
+
+  <h3>Zones tendues et encadrement des loyers</h3>
+  <p>En 2026, l'encadrement des loyers s'applique dans plusieurs villes : Paris, Lyon, Bordeaux, Montpellier, Grenoble, et d'autres communes en zone tendue. Le loyer ne peut dépasser un loyer de référence majoré fixé par arrêté préfectoral. Consultez l'observatoire des loyers de votre ville pour connaître les plafonds en vigueur.</p>
+
+  <h2>FAQ — Bail de location</h2>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Le bail doit-il obligatoirement être écrit ? <span>▾</span></div>
+    <div class="faq-a">Oui, pour toute location nue (non meublée) depuis la loi Alur. Pour une location meublée, le bail écrit est fortement recommandé. Un bail verbal est possible mais risqué : il crée un flou juridique sur les conditions (loyer, durée, obligations) et peut entraîner des litiges difficiles à résoudre.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Le propriétaire peut-il refuser de signer un bail ? <span>▾</span></div>
+    <div class="faq-a">Un bailleur peut refuser un locataire mais ne peut pas discriminer sur des critères protégés (origine, religion, sexe, situation de famille, handicap, etc.). Il peut demander des justificatifs de revenus (généralement 3 fois le loyer) et exiger un garant.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Quand récupère-t-on son dépôt de garantie ? <span>▾</span></div>
+    <div class="faq-a">Le bailleur dispose de 1 mois pour restituer le dépôt si l'état des lieux de sortie est conforme à l'entrée, et de 2 mois si des dégradations sont constatées. Passé ce délai, des intérêts de 10% du dépôt par mois commencé de retard sont dus.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Peut-on modifier les clauses d'un bail type réglementaire ? <span>▾</span></div>
+    <div class="faq-a">Certaines clauses sont réputées non écrites même si elles figurent dans le contrat (interdire les animaux domestiques, imputer au locataire des réparations relevant du bailleur, etc.). Le modèle type réglementaire impose des mentions obligatoires qui ne peuvent être supprimées.</div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Service Express &nbsp;·&nbsp; <a href="https://service-express.org">Portail</a> &nbsp;·&nbsp; <a href="privacy.html">Confidentialité</a></p>
+  <p style="margin-top:6px; font-size:0.75rem;">Modèle informatif — non substitut à un conseil juridique professionnel. Consultez un notaire ou un avocat spécialisé pour toute situation complexe.</p>
+</footer>
+
+<script>
+function val(id) { const el = document.getElementById(id); return el ? el.value.trim() : ''; }
+
+function formatDate(str) {
+  if (!str) return '__';
+  const d = new Date(str);
+  return d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+}
+
+function duree() {
+  const n = val('bail_nature');
+  if (n === 'non_meuble') return '3 (trois) ans';
+  if (n === 'meuble') return '1 (un) an';
+  return 'la durée convenue (bail mobilité)';
+}
+
+function preavisLoc() {
+  const n = val('bail_nature');
+  const zt = val('zone_tendue');
+  if (n === 'non_meuble') return zt === 'oui' ? '1 mois (zone tendue)' : '3 mois';
+  return '1 mois';
+}
+
+function depotMax() {
+  const n = val('bail_nature');
+  const loyer = parseFloat(val('loyer_hc')) || 0;
+  const depot = parseFloat(val('depot')) || 0;
+  if (n === 'meuble') return loyer * 2;
+  return loyer;
+}
+
+function genBail() {
+  const bailNom = val('bail_nom') || '[Nom du bailleur]';
+  const bailAdr = val('bail_adresse') || '[Adresse du bailleur]';
+  const bailType = val('bail_type');
+  const locNom = val('loc_nom') || '[Nom du locataire]';
+  const locNaiss = formatDate(val('loc_naissance'));
+  const locAdr = val('loc_adresse') || '[Adresse actuelle du locataire]';
+  const colocNom = val('coloc_nom');
+  const logAdr = val('log_adresse') || '[Adresse du bien]';
+  const logVille = val('log_ville') || '[Ville]';
+  const logType = val('log_type');
+  const surface = val('log_surface') || '__';
+  const etage = val('log_etage') || '__';
+  const desc = val('log_desc') || '__';
+  const loyerHC = val('loyer_hc') || '__';
+  const charges = val('charges') || '__';
+  const chargesType = val('charges_type') === 'forfait' ? 'forfaitaires non révisables' : 'provisions avec régularisation annuelle';
+  const loyerCC = (parseFloat(val('loyer_hc')) + parseFloat(val('charges'))) || '__';
+  const depot = val('depot') || '__';
+  const dateEntree = formatDate(val('date_entree'));
+  const jourPaie = val('jour_paiement') || '1er';
+  const modePaie = val('mode_paiement') || 'virement';
+  const nature = val('bail_nature');
+  const zt = val('zone_tendue') === 'oui' ? '\n⚠ Zone tendue — le loyer est soumis à l\'encadrement des loyers en vigueur dans cette commune.\n' : '';
+
+  let bailNomFull = bailNom;
+  if (bailType === 'sci') {
+    const rep = val('bail_representant');
+    if (rep) bailNomFull += `, ${rep}`;
+  }
+
+  let locataires = locNom;
+  if (colocNom) locataires += ` et ${colocNom}, ci-après désignés conjointement « le Locataire »`;
+
+  const bail = `CONTRAT DE BAIL DE LOCATION
+──────────────────────────────────────────────────
+
+Conclu conformément aux dispositions de la loi n°89-462 du 6 juillet 1989 modifiée par la loi Alur du 24 mars 2014 et ses décrets d'application.
+${zt}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ARTICLE 1 — PARTIES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+BAILLEUR
+Nom : ${bailNomFull}
+Adresse : ${bailAdr}
+
+LOCATAIRE
+Nom : ${locataires}
+Né(e) le : ${locNaiss}
+Demeurant actuellement : ${locAdr}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ARTICLE 2 — OBJET DU CONTRAT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Le Bailleur loue au Locataire, qui accepte, le logement situé :
+${logAdr}, ${logVille}
+
+Type de bien : ${logType} — ${surface} m² habitable(s) — ${etage}
+Composition : ${desc}
+
+Nature du bail : ${nature === 'non_meuble' ? 'Location non meublée' : nature === 'meuble' ? 'Location meublée' : 'Bail mobilité'}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ARTICLE 3 — DURÉE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Le présent contrat est conclu pour une durée de ${duree()}, à compter du ${dateEntree}.
+À défaut de congé donné dans les conditions légales, il se renouvelle automatiquement.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ARTICLE 4 — LOYER ET CHARGES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Loyer mensuel hors charges : ${loyerHC} €
+Charges mensuelles (${chargesType}) : ${charges} €
+TOTAL mensuel toutes charges comprises : ${loyerCC} €
+
+Le loyer est payable le ${jourPaie} de chaque mois par ${modePaie}.
+
+Le loyer pourra être révisé annuellement selon l'Indice de Référence des Loyers (IRL) publié par l'INSEE.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ARTICLE 5 — DÉPÔT DE GARANTIE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Un dépôt de garantie de ${depot} € est versé à la signature du présent contrat.
+Il sera restitué dans un délai de 1 mois (état des lieux conforme) ou 2 mois (dégradations constatées) après restitution des clés.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ARTICLE 6 — OBLIGATIONS DU LOCATAIRE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Le Locataire s'engage à :
+- Payer le loyer et les charges aux échéances convenues
+- User paisiblement du logement conformément à sa destination
+- Souscrire une assurance habitation et en justifier chaque année
+- Entretenir le logement et effectuer les réparations locatives
+- Ne pas transformer les lieux sans accord écrit du Bailleur
+- Respecter le règlement de copropriété le cas échéant
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ARTICLE 7 — RÉSILIATION — PRÉAVIS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Préavis du Locataire : ${preavisLoc()} (lettre recommandée avec AR)
+Préavis du Bailleur : 6 mois (bail non meublé) / 3 mois (bail meublé) — motif légitime requis
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ARTICLE 8 — CLAUSES PARTICULIÈRES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[Insérer ici les clauses spécifiques : animaux domestiques autorisés/interdits, stationnement, cave, parking, travaux autorisés, etc.]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Fait en deux exemplaires originaux.
+
+À ______________________, le ________________
+
+
+Le Bailleur                          Le(s) Locataire(s)
+
+(Signature précédée de la           (Signature précédée de la
+mention « Lu et approuvé »)         mention « Lu et approuvé »)`;
+
+  document.getElementById('preview').textContent = bail;
+}
+
+function downloadPDF() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+  const text = document.getElementById('preview').textContent;
+  doc.setFont('courier', 'normal');
+  doc.setFontSize(9);
+  const lines = doc.splitTextToSize(text, 170);
+  let y = 15;
+  lines.forEach(line => {
+    if (y > 280) { doc.addPage(); y = 15; }
+    doc.text(line, 20, y);
+    y += 5;
+  });
+  doc.save('bail-location.pdf');
+}
+
+function copyBail() {
+  navigator.clipboard.writeText(document.getElementById('preview').textContent).then(() => {
+    const btn = document.querySelector('.btn-success');
+    const orig = btn.innerHTML;
+    btn.innerHTML = '✅ Copié !';
+    setTimeout(() => btn.innerHTML = orig, 2000);
+  });
+}
+
+function resetForm() {
+  document.querySelectorAll('input, textarea, select').forEach(el => el.value = '');
+  genBail();
+}
+
+function toggleFaq(el) {
+  const ans = el.nextElementSibling;
+  ans.classList.toggle('open');
+  el.querySelector('span').textContent = ans.classList.contains('open') ? '▴' : '▾';
+}
+
+genBail();
+</script>
+</body>
+</html>
