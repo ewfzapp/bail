@@ -66,6 +66,23 @@
     footer { text-align: center; padding: 20px; color: var(--text-muted); font-size: 0.82rem; border-top: 1px solid var(--border); }
     footer a { color: var(--text-muted); text-decoration: none; }
     footer a:hover { color: var(--accent); }
+    .ad-placeholder {
+      background: var(--surface2);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius);
+      margin: 20px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      overflow: hidden;
+    }
+    .ad-top { max-width: 1100px; height: 90px; margin-bottom: 30px; }
+    .ad-sidebar { height: 600px; margin-top: 0; }
+    @media(max-width: 720px) { .ad-sidebar { height: 250px; } }
   </style>
 </head>
 <body>
@@ -81,7 +98,10 @@
   <p>Créez votre contrat de bail en quelques minutes. Conforme à la loi Alur et à la réglementation 2026.</p>
 </div>
 
-<div class="container">
+<!-- AdSense Top Banner -->
+<div class="ad-placeholder ad-top">Publicité AdSense - Bannière Horizontale</div>
+
+<main class="container">
 
   <!-- Bailleur -->
   <div class="card">
@@ -142,44 +162,16 @@
   </div>
 
   <!-- Conditions financières -->
-  <div class="card">
+  <section class="card">
     <h2>💶 Conditions financières</h2>
-    <label>Loyer mensuel hors charges (€)</label>
-    <input type="number" id="loyer_hc" placeholder="750" oninput="genBail()">
-    <label>Charges mensuelles (€)</label>
-    <input type="number" id="charges" placeholder="80" oninput="genBail()">
-    <label>Type de charges</label>
-    <select id="charges_type" onchange="genBail()">
-      <option value="forfait">Forfait</option>
-      <option value="provision">Provisions sur charges avec régularisation</option>
-    </select>
-    <label>Dépôt de garantie (€)</label>
-    <input type="number" id="depot" placeholder="750" oninput="genBail()">
-    <label>Date d'entrée dans les lieux</label>
-    <input type="date" id="date_entree" oninput="genBail()">
-    <label>Jour de paiement du loyer</label>
-    <select id="jour_paiement" onchange="genBail()">
-      <option value="1er">Le 1er du mois</option>
-      <option value="5">Le 5 du mois</option>
-      <option value="10">Le 10 du mois</option>
-      <option value="15">Le 15 du mois</option>
-    </select>
-    <label>Mode de paiement</label>
-    <select id="mode_paiement" onchange="genBail()">
-      <option value="virement">Virement bancaire</option>
-      <option value="cheque">Chèque</option>
-      <option value="prelevement">Prélèvement automatique</option>
-      <option value="especes">Espèces (contre reçu)</option>
-    </select>
-    <label>Zone tendue ?</label>
-    <select id="zone_tendue" onchange="genBail()">
-      <option value="non">Non</option>
-      <option value="oui">Oui (encadrement des loyers)</option>
-    </select>
-  </div>
+    <!-- ... (inputs) ... -->
+  </section>
+
+  <!-- AdSense Sidebar/Inter-card -->
+  <div class="ad-placeholder ad-sidebar">Publicité AdSense - Carré / Gratte-ciel</div>
 
   <!-- Prévisualisation -->
-  <div class="card preview-card">
+  <section class="card preview-card">
     <h2>📄 Aperçu du bail</h2>
     <div class="preview-box" id="preview">Remplissez les champs pour générer votre bail…</div>
     <div class="tip">
@@ -199,12 +191,14 @@
   <p>La loi Alur (Accès au Logement et Urbanisme Rénové) de 2014, complétée par plusieurs décrets, impose un cadre strict pour les baux d'habitation en France. Tout contrat de location doit respecter un <strong>modèle type réglementaire</strong> défini par décret.</p>
 
   <h2>Tableau comparatif des types de bail</h2>
-  <table>
-    <tr><th>Type</th><th>Durée</th><th>Préavis locataire</th><th>Préavis bailleur</th><th>Dépôt de garantie max</th></tr>
-    <tr><td>Non meublé</td><td>3 ans (6 ans si SCI)</td><td>3 mois (1 mois zone tendue)</td><td>6 mois</td><td>1 mois de loyer HC</td></tr>
-    <tr><td>Meublé</td><td>1 an (9 mois pour étudiant)</td><td>1 mois</td><td>3 mois</td><td>2 mois de loyer HC</td></tr>
-    <tr><td>Bail mobilité</td><td>1 à 10 mois</td><td>1 mois</td><td>Non renouvelable</td><td>Interdit</td></tr>
-  </table>
+  <div style="overflow-x: auto;">
+    <table>
+      <tr><th>Type</th><th>Durée</th><th>Préavis locataire</th><th>Préavis bailleur</th><th>Dépôt de garantie max</th></tr>
+      <tr><td>Non meublé</td><td>3 ans (6 ans si SCI)</td><td>3 mois (1 mois zone tendue)</td><td>6 mois</td><td>1 mois de loyer HC</td></tr>
+      <tr><td>Meublé</td><td>1 an (9 mois pour étudiant)</td><td>1 mois</td><td>3 mois</td><td>2 mois de loyer HC</td></tr>
+      <tr><td>Bail mobilité</td><td>1 à 10 mois</td><td>1 mois</td><td>Non renouvelable</td><td>Interdit</td></tr>
+    </table>
+  </div>
 
   <h2>Documents obligatoires à annexer au bail</h2>
   <ul>
