@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bail.service-express.org/sitemap.xml
